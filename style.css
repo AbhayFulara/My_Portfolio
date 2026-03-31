@@ -228,29 +228,169 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(248,250,252,
 .reveal.visible{opacity:1;transform:translateY(0)}
 @keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-/* ── RESPONSIVE ── */
+/* ── RESPONSIVE — Mobile-first dynamic layout ── */
+
+/* ── 1024px: Large tablets / small laptops ── */
+@media(max-width:1024px){
+  .hero-inner{gap:40px}
+  .hero-photo-ring{width:240px;height:240px}
+  .wrap{padding:80px 28px}
+  .about-grid{gap:48px}
+  .contact-grid{gap:40px}
+}
+
+/* ── 900px: Tablets ── */
 @media(max-width:900px){
+  body{font-size:18px}
   .nav-links,.nav-hire{display:none}
   .hamburger{display:flex}
-  .hero-inner{grid-template-columns:1fr;gap:48px}
-  .hero-photo-wrap{flex-direction:row;flex-wrap:wrap;justify-content:center}
-  .about-grid{grid-template-columns:1fr}
+
+  /* Hero */
+  .hero-inner{grid-template-columns:1fr;gap:40px;text-align:center}
+  .hero-photo-wrap{align-items:center}
+  .hero-btns{justify-content:center}
+  .hero-badge{margin-left:auto;margin-right:auto}
+  .hero-desc{margin-left:auto;margin-right:auto}
+
+  /* Photo */
+  .hero-photo-wrap{flex-direction:column;align-items:center}
+  .hero-photo-ring{width:240px;height:240px}
+  .hero-stats{grid-template-columns:repeat(3,1fr)}
+
+  /* About */
+  .about-grid{grid-template-columns:1fr;gap:40px}
+
+  /* Skills */
   .skills-grid{grid-template-columns:repeat(2,1fr)}
-  .ach-grid{grid-template-columns:1fr}
-  .contact-grid{grid-template-columns:1fr}
+
+  /* Achievements */
+  .ach-grid{grid-template-columns:1fr 1fr}
+
+  /* Contact */
+  .contact-grid{grid-template-columns:1fr;gap:40px}
+
+  /* Sections */
   .wrap{padding:72px 24px}
+  .s-sub{margin-bottom:40px}
 }
+
+/* ── 768px: Large phones ── */
+@media(max-width:768px){
+  body{font-size:17px}
+
+  .hero-role{font-size:22px !important}
+  .hero-desc{font-size:19px !important}
+  .hero-name{font-size:clamp(40px,10vw,72px) !important}
+
+  .hstat-n{font-size:26px}
+  .hstat-l{font-size:11px}
+
+  .about-p{font-size:18px}
+  .s-head{font-size:clamp(28px,6vw,42px)}
+  #about h2,#about h3{font-size:clamp(28px,6vw,42px)}
+
+  .sk-card{padding:22px 18px}
+  .sk-nm{font-size:16px}
+
+  .proj-nm{font-size:clamp(18px,4vw,22px)}
+  .proj-desc{font-size:16px}
+  .pfeat{font-size:15px}
+
+  .ach-grid{grid-template-columns:1fr}
+  .ach-title{font-size:15px}
+  .ach-desc{font-size:14px}
+
+  .big-text{font-size:clamp(26px,5vw,40px)}
+  .contact-sub{font-size:16px}
+
+  .wrap{padding:60px 20px}
+}
+
+/* ── 600px: Small phones ── */
 @media(max-width:600px){
+  body{font-size:16px;line-height:1.65}
+
+  /* Nav */
+  .nav-inner{padding:12px 16px}
+  .logo{font-size:18px}
+
+  /* Hero */
+  #hero{padding:80px 16px 40px}
+  .hero-name{font-size:clamp(36px,11vw,60px) !important}
+  .hero-role{font-size:20px !important}
+  .hero-desc{font-size:17px !important;line-height:1.75}
+  .hero-btns{flex-direction:column;align-items:stretch}
+  .btn-g,.btn-w,.btn-resume{justify-content:center;text-align:center;font-size:15px;padding:13px 20px}
+
+  /* Stats */
+  .hero-stats{grid-template-columns:1fr 1fr;gap:8px}
+  .hstat{padding:14px 10px}
+  .hstat-n{font-size:22px}
+  .hstat-l{font-size:10px}
+
+  /* Photo */
+  .hero-photo-ring{width:200px;height:200px}
+  .hero-photo-wrap{gap:16px}
+
+  /* Skills */
   .skills-grid{grid-template-columns:1fr}
-  .proj-top{padding:20px 20px 18px}
-  .proj-footer{padding:14px 20px}
-  .proj-img-wrap{height:190px}
-  #hero{padding:90px 20px 48px}
-  .nav-inner{padding:14px 20px}
-  .hero-btns{flex-direction:column}
-  .btn-g,.btn-w{justify-content:center;text-align:center}
-  .ach-card{flex-direction:column}
-  .hero-photo-ring{width:220px;height:220px}
+  .sk-card{padding:20px 16px}
+
+  /* Projects */
+  .proj-top{padding:18px 16px 16px}
+  .proj-footer{padding:12px 16px;flex-direction:column;align-items:flex-start}
+  .proj-img-wrap{height:180px}
+  .proj-nm{font-size:18px}
+  .proj-desc{font-size:15px}
+  .pfeat{font-size:14px}
+
+  /* About */
+  .about-p{font-size:17px}
+  .soft-tag{font-size:13px;padding:6px 14px}
+  .edu-nm{font-size:15px}
+  .edu-in{font-size:14px}
+
+  /* Achievements */
+  .ach-card{flex-direction:column;padding:20px 16px}
+  .ach-title{font-size:15px}
+  .ach-desc{font-size:14px}
+
+  /* Contact */
+  .big-text{font-size:clamp(24px,7vw,36px)}
+  .contact-sub{font-size:15px}
+  .cc{padding:14px 16px}
+  .cc-val{font-size:15px}
+
+  /* Sections */
+  .wrap{padding:52px 16px}
+  .s-sub{font-size:16px;margin-bottom:32px}
+  .s-head{font-size:clamp(24px,7vw,36px)}
+  #about h2,#about h3{font-size:clamp(24px,7vw,36px)}
+  .s-tag{font-size:12px}
+
+  /* Footer */
+  .footer-inner{text-align:center;justify-content:center;padding:18px 16px}
+}
+
+/* ── 480px: Very small phones ── */
+@media(max-width:480px){
+  body{font-size:15px}
+
+  #hero{padding:70px 14px 36px}
+  .hero-name{font-size:clamp(32px,12vw,52px) !important}
+  .hero-role{font-size:18px !important}
+  .hero-desc{font-size:16px !important}
+
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .hstat-n{font-size:20px}
+  .hero-photo-ring{width:180px;height:180px}
+
+  .wrap{padding:44px 14px}
+
+  .proj-img-wrap{height:160px}
+  .ach-card{padding:16px 14px}
+
+  .btn-g,.btn-w,.btn-resume{font-size:14px;padding:12px 18px}
 }
 
 /* Dark background for console screenshots */
